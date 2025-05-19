@@ -23,7 +23,11 @@ function Login() {
     } else if (!user.emailVerified) {
       setMensagem("⚠️ Verifique o seu email antes de continuar.");
     } else {
-      navigate("/cliente");
+      if (user.email === "digitalasset265@gmail.com") {
+        navigate("/admin");
+      } else {
+        navigate("/cliente");
+      }
     }
 
     setLoading(false);
